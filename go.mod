@@ -1,4 +1,4 @@
-module github.com/JuiceXiaoBao/go-upstream
+module github.com/juicesix/go-upstream
 
 go 1.16
 
