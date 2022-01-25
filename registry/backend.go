@@ -4,7 +4,7 @@ import (
 	"sort"
 	"strings"
 
-	"GoUpstream/config"
+	"github.com/juicesix/go-upstream/config"
 )
 
 // Cluster is service all health endpoints

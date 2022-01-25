@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"GoUpstream/logging"
+	"github.com/juicesix/logging"
 )
 
 type Log struct {
