@@ -94,11 +94,15 @@ func (b *be) WatchServices(name string, status []string, dc string) chan []*regi
 }
 
 func (b *be) WatchManual(KVPath string) chan string {
-	test := make(chan string)
-	return test
+	b.logger.Infof("consul:Watching KV path %q", KVPath)
+	kv := make(chan string)
+	go watchKV(b.logger, b.c, KVPath, kv)
+	return kv
 }
 
 func (b *be) WatchPrefixManual(prefix string) chan map[string]string {
-	test := make(chan map[string]string)
-	return test
+	b.logger.Infof("consul:Watching prefix path %q", prefix)
+	kvs := make(chan map[string]string)
+	go watchPrefix(b.logger, b.c, prefix, kvs)
+	return kvs
 }
